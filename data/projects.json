@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "number": "01",
+    "title": "MCP Server-Orchestrator",
+    "description": "The core ecosystem for orchestrating servers using the Model Context Protocol (MCP). Built to standardize interaction between AI agents and various data sources.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC4ovT0YKWMrXoN-QJZtW4ZUDIAsSDpRPSPigYiZBJXPt4q7iixpvOlPDi4lLxIJTtSiVWj6gnINE7FW_xllOsYHCHDsetC5T_0iUsPiZNKCOfWwJcXtc_rvaufgs3QDbYyIlND79-rFvv6uNFKdeT5WLqy6RowQ3_U1kyIJV627f3T5qUkZ4qJwDlWGW1SkW2rqUgvUlyQmoDyXSfGjF9e2Frsq4uIFtSZdYbQEnQfjRN_gAcZgKvg8NTr1Fhj5IHx0GtcdTl2m0k",
+    "placeholderIcon": null,
+    "link": { "label": "View Core", "href": "#" },
+    "tags": ["MCP", "Node.js", "TypeScript", "AI Agents"]
+  },
+  {
+    "id": 2,
+    "number": "02",
+    "title": "SMA (Social Media Analytics)",
+    "description": "AI-powered social media scraping and sentiment analysis system built with Next.js. Processes real-time data to derive actionable insights.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeAuTihdC2JEHbJ9ukiBWGpLveJkN6CxpycadewAg0i-NkLs-O715cNrmLizrv96BC9y2S_z12PQ4WaAsaRZs5oUHgLvR_EPfsV3i-B3VjSEFIx-hxjqMKMXZKkVyacFH1NOAIrOwGmpk1Z5QTh0pzPp1eGnND6Dg6lCwnZ-CPrL2EzmRUVZ8rcvUzaKIFOdnEccbbpJr5Zo1CNDzANr8NH793oYeM5X0OdzDuPAqZ_kef0AnLX3ARCdG8ql9EHUt6BlnrvRd4Twg",
+    "placeholderIcon": null,
+    "link": { "label": "Explore AI", "href": "#" },
+    "tags": ["Next.js", "AI", "Data Analytics", "Scraping"]
+  },
+  {
+    "id": 3,
+    "number": "03",
+    "title": "Bienal Chaco",
+    "description": "Artist and user management platform with public voting. Integrated Playwright with MCP for automated testing guidance, ensuring stability during high-traffic events.",
+    "image": null,
+    "placeholderIcon": "palette",
+    "link": { "label": "Case Study", "href": "#" },
+    "tags": ["Next.js", "Playwright", "MCP", "Voting System"]
+  },
+  {
+    "id": 4,
+    "number": "04",
+    "title": "Clinicom (Clinician UI)",
+    "description": "Led the migration from Lovable Cloud Sync to a custom environment. Built the core App Shell and CI/CD pipeline on Azure for healthcare-grade security and reliability.",
+    "image": null,
+    "placeholderIcon": "medical_services",
+    "link": { "label": "Platform Details", "href": "#" },
+    "tags": ["Azure", "CI/CD", "Healthcare", "App Shell"]
+  },
+  {
+    "id": 5,
+    "number": "05",
+    "title": "Project Tracking System",
+    "description": "Lead developer for a Next.js management system. Implemented robust CI/CD with GitHub and Donweb, streamlining the internal development lifecycle.",
+    "image": null,
+    "placeholderIcon": "assignment",
+    "link": { "label": "Implementation", "href": "#" },
+    "tags": ["Next.js", "CI/CD", "GitHub Actions", "Management"]
+  }
+]

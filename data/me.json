@@ -1,0 +1,27 @@
+{
+  "personal": {
+    "name": "Felix Toledo",
+    "role": "Full-Stack Engineer | AI Integrations",
+    "location": "Corrientes, Argentina",
+    "mantra": "Architecting scalable web systems with precision."
+  },
+  "story": {
+    "past": "Started coding and learning the basics of static web development.",
+    "present": "Currently specializing in automated ecosystems and resilient architectures. Doing AI integrations and building scalable web applications.",
+    "future": "Aiming to lead complex infrastructures and solve enterprise-level problems. Prioritizing AI innovation and robust system design."
+  },
+  "contact": {
+    "email": "felixtoledoctes@gmail.com"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/felix-toledo-ctes/",
+    "github": "https://github.com/felix-toledo"
+  },
+  "assets": {
+    "cvUrl": "/downloads/Curriculum.pdf",
+    "videoPresentationUrl": "https://www.youtube.com/watch?v=xQm9wQ3jQas"
+  },
+  "metadata": {
+    "creationDate": "Marzo 2026"
+  }
+}
