@@ -31,7 +31,7 @@ The challenge was making both sides feel native — not a generic form, but an e
 
 ## Identity Verification
 
-Trust is the core value proposition. Every professional on Tembiapo goes through a **DNI verification flow** before their profile goes live. This guarantees clients are contacting real, identifiable people — not anonymous accounts.
+Trust is the core value proposition. Every professional on Tembiapo goes through a **DNI verification flow** before their profile goes live. This guarantees clients are contacting real, identifiable people — not anonymous accounts. I did the verification service with python, you can see the repo here: [Face Recognition Service Repo](https://github.com/felix-toledo/deepface-service)
 
 ## Tech Stack
 
@@ -39,7 +39,7 @@ Trust is the core value proposition. Every professional on Tembiapo goes through
 - **Language:** TypeScript
 - **Database:** PostgreSQL
 - **Auth:** Custom session management with DNI verification
-- **Hosting:** Vercel + Supabase
+- **Hosting:** Digital Ocean
 - **Contact:** WhatsApp Business API integration
 
 ## Current State

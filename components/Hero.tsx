@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import me from "@/data/me.json";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -16,19 +17,17 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-[100svh] flex flex-col justify-center px-6 max-w-7xl mx-auto overflow-hidden"
     >
-      {/* Decorative background */}
-      <div className="absolute top-20 right-0 w-1/2 h-full opacity-[0.06] pointer-events-none select-none overflow-hidden">
-        <span
-          className="material-symbols-outlined text-[40rem] animate-float"
-          style={{ fontVariationSettings: '"wght" 100' }}
-        >
-          architecture
-        </span>
-      </div>
-
       <div className="z-10 max-w-4xl w-full">
         {/* Role + location badge */}
         <div className="reveal flex flex-wrap items-center gap-3 mb-8">
+          <Image
+            src="/felix.png"
+            alt="Felix Toledo"
+            width={40}
+            height={40}
+            className="drop-shadow-sm flex-shrink-0"
+            priority
+          />
           <span className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
             <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
             {me.personal.role}

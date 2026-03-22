@@ -7,8 +7,24 @@ import { getAllPosts } from "@/lib/blog";
 import me from "@/data/me.json";
 
 export const metadata: Metadata = {
-  title: `Blog | ${me.personal.name}`,
-  description: `Technical thoughts, architecture deep dives, and project updates by ${me.personal.name}.`,
+  title: "Blog",
+  description: `Technical thoughts, architecture deep dives, and project updates by ${me.personal.name}. ${me.personal.role} based in ${me.personal.location}.`,
+  alternates: { canonical: `${me.siteUrl}/blog` },
+  openGraph: {
+    type: "website",
+    url: `${me.siteUrl}/blog`,
+    title: `Blog | ${me.personal.name}`,
+    description: `Technical thoughts, architecture deep dives, and project updates by ${me.personal.name}.`,
+    images: [
+      { url: "/felix.png", width: 400, height: 400, alt: me.personal.name },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Blog | ${me.personal.name}`,
+    description: `Technical thoughts and architecture deep dives by ${me.personal.name}.`,
+    images: ["/felix.png"],
+  },
 };
 
 export default function BlogPage() {

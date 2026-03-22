@@ -37,9 +37,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = (projectsData as Project[]).find((p) => p.slug === slug);
   if (!project) return {};
+  const ogImage = project.coverImage ?? "/felix.png";
   return {
-    title: `${project.title} | ${me.personal.name}`,
+    title: project.title,
     description: project.description,
+    alternates: { canonical: `${me.siteUrl}/projects/${slug}` },
+    openGraph: {
+      type: "website",
+      url: `${me.siteUrl}/projects/${slug}`,
+      title: `${project.title} | ${me.personal.name}`,
+      description: project.description,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: project.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | ${me.personal.name}`,
+      description: project.description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -53,8 +68,28 @@ export default async function ProjectPage({ params }: Props) {
     ? await getProjectContent(project.markdownFile)
     : null;
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: `${me.siteUrl}/projects/${project.slug}`,
+    author: {
+      "@type": "Person",
+      name: me.personal.name,
+      url: me.siteUrl,
+    },
+    keywords: project.tags.join(", "),
+    ...(project.coverImage && { image: `${me.siteUrl}${project.coverImage}` }),
+    ...(project.appUrl && { sameAs: project.appUrl }),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <Header />
       <main className="pt-16 pb-24 md:pb-0 min-h-screen">
         <article className="px-6 max-w-4xl mx-auto py-24">

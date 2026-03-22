@@ -20,7 +20,7 @@ const cards = [
   {
     icon: "database",
     title: "Database",
-    description: "SQL, PostgreSQL, Supabase.",
+    description: "SQL, PostgreSQL, Mongo.",
     badge: "Persistence",
     delay: "d3",
   },

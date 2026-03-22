@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -21,8 +22,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | ${me.personal.name}`,
+    title: post.title,
     description: post.description,
+    alternates: { canonical: `${me.siteUrl}/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      url: `${me.siteUrl}/blog/${slug}`,
+      title: `${post.title} | ${me.personal.name}`,
+      description: post.description,
+      publishedTime: post.date,
+      authors: [me.personal.name],
+      images: [{ url: "/felix.png", width: 400, height: 400, alt: me.personal.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ${me.personal.name}`,
+      description: post.description,
+      images: ["/felix.png"],
+    },
   };
 }
 
@@ -61,8 +78,14 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Author strip */}
           <div className="flex items-center gap-4 mb-16 pb-12 border-b border-outline-variant">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-black text-sm flex-shrink-0">
-              {me.personal.name.charAt(0)}
+            <div className="flex-shrink-0">
+              <Image
+                src="/felix.png"
+                alt={me.personal.name}
+                width={40}
+                height={40}
+                className="drop-shadow-sm"
+              />
             </div>
             <div>
               <p className="font-black text-sm">{me.personal.name}</p>
