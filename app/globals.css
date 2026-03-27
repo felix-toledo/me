@@ -277,23 +277,110 @@ body {
 }
 
 .blog-content code {
-  background: #f0edec;
+  background: #f6f3f2;
   border: 1px solid #e8bcb7;
-  border-radius: 4px;
-  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  padding: 0.1em 0.45em;
   font-size: 0.875em;
   font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
 .blog-content pre {
-  background: #1c1b1b;
+  position: relative;
+  background: linear-gradient(180deg, #262424 0%, #1c1b1b 100%);
   color: #fcf9f8;
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #5e3f3c;
+  box-shadow: 0 14px 28px -24px rgba(28, 27, 27, 0.85);
+  padding: 2.2rem 1.25rem 1.25rem;
   overflow-x: auto;
-  margin-bottom: 1.5rem;
+  margin: 1.75rem 0;
   font-size: 0.875rem;
   line-height: 1.7;
+}
+
+.blog-content pre::before {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 1rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: #e57373;
+  box-shadow:
+    1rem 0 0 #ffcc80,
+    2rem 0 0 #81c784;
+}
+
+.blog-content pre::after {
+  content: "code";
+  position: absolute;
+  top: 0.62rem;
+  left: 4rem;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #dcd9d9;
+}
+
+.blog-content .code-copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  border: 1px solid #936e6a;
+  border-radius: 8px;
+  background: #2f2d2d;
+  color: #fcf9f8;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.4rem 0.55rem;
+  cursor: pointer;
+  z-index: 2;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.blog-content .code-copy-button:hover {
+  background: #3a3838;
+  border-color: #e8bcb7;
+}
+
+.blog-content .code-copy-button:active {
+  transform: translateY(1px);
+}
+
+.blog-content .code-copy-button:focus-visible {
+  outline: 2px solid #97ccfe;
+  outline-offset: 2px;
+}
+
+.blog-content .code-copy-button.is-copied {
+  background: #11472f;
+  border-color: #64d4a0;
+  color: #d8ffed;
+}
+
+.blog-content pre:has(code.language-bash)::after {
+  content: "bash";
+}
+
+.blog-content pre:has(code.language-json)::after {
+  content: "json";
+}
+
+.blog-content pre:has(code.language-powershell)::after {
+  content: "powershell";
+}
+
+.blog-content pre:has(code.language-text)::after {
+  content: "text";
 }
 
 .blog-content pre code {
@@ -302,6 +389,19 @@ body {
   padding: 0;
   font-size: inherit;
   color: inherit;
+}
+
+.blog-content p:has(> img) {
+  margin: 2rem 0;
+}
+
+.blog-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #e8bcb7;
+  background: #f6f3f2;
+  box-shadow: 0 20px 36px -32px rgba(28, 27, 27, 0.8);
 }
 
 .blog-content hr {

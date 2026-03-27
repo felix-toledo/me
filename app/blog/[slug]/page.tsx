@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import BlogCodeCopy from "@/components/BlogCodeCopy";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import me from "@/data/me.json";
 
@@ -32,7 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       publishedTime: post.date,
       authors: [me.personal.name],
-      images: [{ url: "/felix.png", width: 400, height: 400, alt: me.personal.name }],
+      images: [
+        { url: "/felix.png", width: 400, height: 400, alt: me.personal.name },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -100,6 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
             className="blog-content"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
+          <BlogCodeCopy />
 
           {/* Author card at bottom */}
           <div className="mt-20 pt-12 border-t border-outline-variant">
